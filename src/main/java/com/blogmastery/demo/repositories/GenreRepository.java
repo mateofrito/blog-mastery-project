@@ -3,14 +3,11 @@ package com.blogmastery.demo.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.blogmastery.demo.models.Tag;
+import com.blogmastery.demo.models.Genre;
 
 @Repository
-public interface TagRepository extends CrudRepository<Tag, Long> {
+public interface GenreRepository extends CrudRepository<Genre, Long> {
 	
-	Tag findbyTag(String tag);
-	
-
-	
+	Genre findGenreByGenre(String genre);
 
 }

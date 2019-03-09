@@ -1,6 +1,5 @@
 package com.blogmastery.demo.models;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -11,40 +10,35 @@ import javax.persistence.ManyToMany;
 import com.blogmastery.demo.Post;
 
 @Entity
-public class Author {
-	
+public class BlogTag {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String author;
-	@ManyToMany
+	private String tagName;
+	
+	@ManyToMany(mappedBy="blogTags")
 	private Collection<Post> post;
 	
-	public Author() {}
-
-	public Author(String author, Post ...post ) { /*this will tell it it s a list in an array*/
+	public BlogTag () {}
+	
+	public BlogTag (String tagName) {
+		this.tagName = tagName;
 		
-		this.author = author;
-		this.post = Arrays.asList(post);
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getTagName() {
+		return tagName;
 	}
 
 	public Collection<Post> getPost() {
 		return post;
 	}
+	
+	
+	
 
-	
-	
-	
-	
-	
-	
-	
 }
