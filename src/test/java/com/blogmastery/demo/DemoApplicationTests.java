@@ -12,14 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-<<<<<<< HEAD
-//import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-//import org.springframework.test.context.junit4.SpringRunner;
-
-=======
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
->>>>>>> front-end
 import com.blogmastery.demo.models.Author;
 import com.blogmastery.demo.models.BlogTag;
 import com.blogmastery.demo.models.Genre;
@@ -28,10 +21,6 @@ import com.blogmastery.demo.repositories.AuthorRepository;
 import com.blogmastery.demo.repositories.BlogTagRepository;
 import com.blogmastery.demo.repositories.GenreRepository;
 import com.blogmastery.demo.repositories.PostRepository;
-<<<<<<< HEAD
-
-=======
->>>>>>> front-end
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -47,14 +36,12 @@ public class DemoApplicationTests {
 	
 	@Resource
 	private AuthorRepository authorRepo;
-<<<<<<< HEAD
-	@Resource
-	private BlogTagRepository tagRepo;
-=======
->>>>>>> front-end
 	
 	@Resource 
 	private GenreRepository genreRepo;
+	
+	@Resource
+	private BlogTagRepository tagRepo;
 	
 	@Test
     public void shouldSaveAndLoadPost() {
@@ -93,7 +80,6 @@ public class DemoApplicationTests {
  
         assertThat(author.getAuthor(), is("my name"));
     }
-<<<<<<< HEAD
 	@Test
     public void shouldSaveAndLoadTag() {
 		//Post post = postRepo.save(new Post("new blog", "This is my blog post", "Fry", "08 Mar 2019", "Sports", "Random"));
@@ -124,8 +110,5 @@ public class DemoApplicationTests {
         assertThat(genre.getGenre(), is ("romance"));
 		
 	}
-=======
-
->>>>>>> front-end
 	
 }
