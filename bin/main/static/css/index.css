@@ -9,6 +9,12 @@ body {
     flex-direction: column;
     height: 100%;
 }
+figure >img{
+
+    height: 80px;
+    width: 80px;
+
+}
 
 header {
     background-color: powderblue;
