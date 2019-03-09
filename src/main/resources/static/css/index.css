@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: powderblue;
+    background-color: blueviolet;
     flex: 0 0 40px;
     color: white;
     padding: 20px;
