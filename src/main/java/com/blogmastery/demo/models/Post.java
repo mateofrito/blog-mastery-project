@@ -1,5 +1,6 @@
-package com.blogmastery.demo;
+package com.blogmastery.demo.models;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -9,10 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
-import com.blogmastery.demo.models.Author;
-import com.blogmastery.demo.models.BlogTag;
-import com.blogmastery.demo.models.Genre;
 
 @Entity
 public class Post {
@@ -24,7 +21,7 @@ public class Post {
 	private String body;
 	@ManyToMany
 	private Collection<Author> author;
-	private String date;
+	private LocalDateTime date;
 	@ManyToOne
 	private Genre genre;
 	@ManyToMany
@@ -32,11 +29,11 @@ public class Post {
 	
 	public Post() {}
 
-	public Post(String title, String body, Author author, String date, Genre genre, BlogTag ...blogTags) {
+	public Post(String title, String body, Author author, Genre genre, BlogTag ...blogTags) {
 		this.title = title;
 		this.body = body;
 		this.author = Arrays.asList(author);
-		this.date = date;
+		this.date = LocalDateTime.now();
 		this.genre = genre;
 		this.blogTags = Arrays.asList(blogTags);
 	}
@@ -50,7 +47,7 @@ public class Post {
 		return author;
 	}
 
-	public String getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 

@@ -7,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import com.blogmastery.demo.Post;
-
 @Entity
 public class BlogTag {
 	@Id

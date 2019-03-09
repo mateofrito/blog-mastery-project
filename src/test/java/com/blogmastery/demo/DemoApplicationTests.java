@@ -13,13 +13,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
+//import org.springframework.test.context.junit4.SpringRunner;
 
 import com.blogmastery.demo.models.Author;
 import com.blogmastery.demo.models.BlogTag;
 import com.blogmastery.demo.models.Genre;
+import com.blogmastery.demo.models.Post;
 import com.blogmastery.demo.repositories.AuthorRepository;
 import com.blogmastery.demo.repositories.BlogTagRepository;
 import com.blogmastery.demo.repositories.GenreRepository;
@@ -51,7 +52,7 @@ public class DemoApplicationTests {
 		Genre testGenre = genreRepo.save(new Genre("sports"));
         BlogTag testTag = tagRepo.save(new BlogTag("test"));
         Author testAuthor = authorRepo.save(new Author("Fry"));
-		Post post = postRepo.save(new Post("new blog", "This is my blog post", testAuthor, "08 Mar 2019", testGenre, testTag));
+		Post post = postRepo.save(new Post("new blog", "This is my blog post", testAuthor, testGenre, testTag));
         Long postId = post.getId();
  
         entityManager.persist(post);
@@ -70,7 +71,7 @@ public class DemoApplicationTests {
 		Author testAuthor = authorRepo.save(new Author("Fry"));
 		Genre testGenre = genreRepo.save(new Genre("sports"));
 		BlogTag testTag = tagRepo.save(new BlogTag("test"));
-		Post post = postRepo.save(new Post("new blog", "This is my blog post", testAuthor, "08 Mar 2019", testGenre, testTag));
+		Post post = postRepo.save(new Post("new blog", "This is my blog post", testAuthor, testGenre, testTag));
         Author author = authorRepo.save(new Author("my name", post));
         Long authorId = author.getId();
  
