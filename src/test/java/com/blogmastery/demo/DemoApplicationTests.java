@@ -8,21 +8,15 @@ import java.util.Optional;
 
 import javax.annotation.Resource;
 
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import com.blogmastery.demo.models.Author;
 import com.blogmastery.demo.models.Post;
-import com.blogmastery.demo.models.Tag;
 import com.blogmastery.demo.repositories.AuthorRepository;
 import com.blogmastery.demo.repositories.PostRepository;
-import com.blogmastery.demo.repositories.TagRepository;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,8 +32,6 @@ public class DemoApplicationTests {
 	
 	@Resource
 	private AuthorRepository authorRepo;
-	@Resource
-	private TagRepository tagRepo;
 	
 	
 	@Test
@@ -62,31 +54,17 @@ public class DemoApplicationTests {
     public void shouldSaveAndLoadAuthor() {
 		Post post = postRepo.save(new Post("new blog", "This is my blog post", "Fry", "08 Mar 2019", "Sports", "Random"));
         Author author = authorRepo.save(new Author("my name", post));
-        Long authorId = author.getId();
+        Long postId = author.getId();
  
         entityManager.persist(author);
         entityManager.flush();
         entityManager.clear();
  
-        Optional<Author> authorToFind = authorRepo.findById(authorId);
+        Optional<Author> authorToFind = authorRepo.findById(postId);
         author = authorToFind.get();
  
         assertThat(author.getAuthor(), is("my name"));
     }
-//	@Test
-//    public void shouldSaveAndLoadTag() {
-//		//Post post = postRepo.save(new Post("new blog", "This is my blog post", "Fry", "08 Mar 2019", "Sports", "Random"));
-//        Tag tag = tagRepo.save(new Tag("tag"));
-//        Long tagId = tag.getId();
-// 
-//        entityManager.persist(tag);
-//        entityManager.flush();
-//        entityManager.clear();
-// 
-//        Optional<Tag> tagToFind = tagRepo.findById(tagId);
-//        tag = tagToFind.get();
-// 
-//        assertThat(tag.getTag(), is("tag"));
-//    }
+
 	
 }
