@@ -28,8 +28,10 @@ public class HomeController {
 	@GetMapping("/")
 	public String getHomePage(Model model) {
 		
+
 		model.addAttribute("posts", postRepo.findAll());
 		
+
 		return "index";
 		
 	}
