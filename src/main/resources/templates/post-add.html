@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Post</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon(1)_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon(1)_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon(1)_io/favicon-16x16.png">
+	<link rel="manifest" href="/favicon/favicon(1)_io/site.webmanifest">
+	<meta name="description" content="The Best Blog on Earth!">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="css/index.css"> 
+</head>
+<body>
+	<header>
+
+		<figure>
+			<img src="images/onetech-logo.png">
+		</figure>
+
+		<nav>
+			<ul>
+				<li><a href="#" >Home</a></li>
+				<li><a href="#" >Blog</a></li>
+				<li><a href="#" >About</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section>
+		<h1>Add Post</h1>
+		<form action="post/add" method="POST" class="post-entery">
+			<h4> Select Author </h4>
+			<div class="drop-down" th:object="${author}">
+				<select class="form-control" id="dropOperator" name="author">
+					<option value="0"> Select Author </option>
+					<option th:each="category : ${authors}"
+					th:value="${author.author}"
+					th:text="${author.author}"> other option</option>
+				</select>	
+
+			</div>
+
+			<h4> Select Genre </h4>
+			<div class="drop-down" th:object="${author}">
+				<select class="form-control" id="dropOperator" name="genre">
+					<option value="0"> Select Genre </option>
+					<option th:each="category : ${genres}"
+					th:value="${genre.genre}"
+					th:text="${genre.genre}"> other option</option>
+				</select>	
+				
+			</div>
+
+			
+			<h4>Title</h4>
+
+			<input type="text" placeholder="Put Title Here" type="textbox" name="title" id="title" style="width: 500px;" maxlength="100" autofocus required></input>
+			<h4>Post</h4>
+			<textarea class="postbox" name="body" placeholder="please write your blog post here" maxlength ="5000" style=" width: 500px; height:500px;" required></textarea>
+
+			<input type="submit" name="submit" value="submit" style="width:200px;" required/>
+
+			<h4> select Tag </h4>
+			<div class="drop-down" th:object="${tag}">
+				<select class="form-control" id="dropOperator" name="tag">
+					<option value="0"> Select Tag </option>
+					<option th:each="category : ${tags}"
+					th:value="${tag.tag}"
+					th:text="${tag.tag}"> other option</option>
+				</select>	
+				
+			</div>
+
+			</form>
+
+		</section>
+
+
+
+		<footer>
+			<small>&copy; Top|Blog 2019</small>
+		</footer>
+
+
+
+	</body>
+	</html>
