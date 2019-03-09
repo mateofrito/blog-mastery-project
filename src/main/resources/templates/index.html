@@ -1,4 +1,5 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<title>Top|Blog</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon(1)_io/apple-touch-icon.png">
@@ -14,9 +15,11 @@
 
 <body>
 	<header>
+
 		<figure>
 			<img src="images/onetech-logo.png">
 		</figure>
+
 		<nav>
 			<ul>
 				<li><a href="#" >Home</a></li>
@@ -29,12 +32,14 @@
 	<section>
 		<main>
 
+
 			<article class="post" th:each="post : ${posts}">
 			<h4 th:text="${post.title}">Blog Post 1</h4>
 			<span th:text="${#strings.abbreviate(post.body, 100)}">Post</span>
 			</article>
 			
 			
+
 		</main>
 
 		<aside>
