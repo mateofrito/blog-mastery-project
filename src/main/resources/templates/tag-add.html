@@ -26,26 +26,26 @@
 			</ul>
 		</nav>
 	</header>
-	
+
 	<section>
 		<main>
-			<article class="post" th:each="post : ${posts}">
-				<h4 th:text="${post.title}">Blog Post 1</h4>
-				<span th:text="${#strings.abbreviate(post.body, 200)}">Post</span>
+			<article class="tags" th:each="tag : ${tags}">
+				<h4 th:text="${tag.tagName}">Tags</h4>
 			</article>
-		</main>
-		
 
-		<aside>
-			Popular Post This Week 
-			(Add Banner, Tag List, etc..)
-		</aside>
+			<form action="/newtag" method="POST" class="data-entery">
+				<h4>New Tag</h4>
+				<input type="text" placeholder="type your tag here" name="tagName" id="tagName" style="width: 200px;" maxlength="100" autofocus required/>
+
+				<input type="submit" name="submit" value="submit" style="width:75px; height: 45px; display:block; text-align: center; margin: 0 auto;" required/>
+			</form>
+
+		</main>
 	</section>
-	
+
 	<footer>
 		<small>&copy; Top|Blog 2019</small>
 	</footer>
-	
 
 </body>
 </html>
