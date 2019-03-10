@@ -63,6 +63,11 @@ public class PostController {
 		
 		return "post-submitted";
 	}
+	
+	@GetMapping("/home")
+	public String newHomePage() {
+		return "home";
+	}
 		
 		
 }
