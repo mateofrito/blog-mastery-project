@@ -7,14 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.blogmastery.demo.models.BlogTag;
+import com.blogmastery.demo.models.Genre;
 import com.blogmastery.demo.repositories.AuthorRepository;
 import com.blogmastery.demo.repositories.BlogTagRepository;
 import com.blogmastery.demo.repositories.GenreRepository;
 import com.blogmastery.demo.repositories.PostRepository;
 
 @Controller
-public class TagController {
+public class GenreController {
 	@Resource
 	PostRepository postRepo;
 	
@@ -27,16 +27,16 @@ public class TagController {
 	@Resource
 	BlogTagRepository blogTagRepo;
 	
-	@GetMapping("/addtag")
+	@GetMapping("/addgenre")
 		public String getPostForm(Model model) {
-		model.addAttribute("tags", blogTagRepo.findAll());
-		return "/tags/tag-add";
-		
+		model.addAttribute("genres", genreRepo.findAll());
+		return "/genres/genre-add";
 	}
-	@PostMapping("/newtag")
-	public String addTag(String tagName) {
-		blogTagRepo.save(new BlogTag(tagName));
-		return "redirect:/addtag";	
+	
+	@PostMapping("/newgenre")
+	public String addGenre(String genre) {
+		genreRepo.save(new Genre(genre));
+		return "redirect:/addgenre";	
 		}
 	
 		

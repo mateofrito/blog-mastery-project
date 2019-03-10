@@ -1,7 +1,5 @@
 package com.blogmastery.demo.controllers;
 
-import java.util.Collection;
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
