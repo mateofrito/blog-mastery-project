@@ -5,14 +5,16 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.blogmastery.demo.models.Genre;
 import com.blogmastery.demo.repositories.AuthorRepository;
 import com.blogmastery.demo.repositories.BlogTagRepository;
 import com.blogmastery.demo.repositories.GenreRepository;
 import com.blogmastery.demo.repositories.PostRepository;
 
 @Controller
-public class HomeController {
+public class GenreController {
 	@Resource
 	PostRepository postRepo;
 	
@@ -25,18 +27,17 @@ public class HomeController {
 	@Resource
 	BlogTagRepository blogTagRepo;
 	
-	@GetMapping("/")
-	public String getHomePage(Model model) {
-		
-		model.addAttribute("posts", postRepo.findAll());
-		
-		return "index";
-		
+	@GetMapping("/addgenre")
+		public String getPostForm(Model model) {
+		model.addAttribute("genres", genreRepo.findAll());
+		return "/genres/genre-add";
 	}
 	
+	@PostMapping("/newgenre")
+	public String addGenre(String genre) {
+		genreRepo.save(new Genre(genre));
+		return "redirect:/addgenre";	
+		}
 	
-	
-	
-	
-
+		
 }

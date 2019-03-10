@@ -1,5 +1,6 @@
 package com.blogmastery.demo.models;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -14,13 +15,26 @@ public class BlogTag {
 	private Long id;
 	private String tagName;
 	
-	@ManyToMany(mappedBy="blogTags")
-	private Collection<Post> post;
+	@ManyToMany(mappedBy="tag")
+	private Collection<Post> post = new ArrayList<Post>();
 	
+	@Override
+	public String toString() {
+		return "BlogTag [id=" + id + ", tagName=" + tagName + ", post=" + post + "]";
+	}
+
 	public BlogTag () {}
 	
 	public BlogTag (String tagName) {
 		this.tagName = tagName;
+		
+	}
+	
+	public BlogTag (String tagName, Collection<Post> post)
+	{this.tagName=tagName;
+	this.post=post;
+	
+		
 		
 	}
 
