@@ -89,7 +89,7 @@ section > main {
     padding: 20px;
     overflow: auto;
 }
-aside {
+/*aside {
     background-color: lightblue;
     height: 100%;
     flex-grow: 0;
@@ -97,7 +97,7 @@ aside {
     justify-content: center;
     align-items: center;
     display: flex;
-}
+}*/
 article {
     border-radius: 5px;
     background-color: #efefef;
