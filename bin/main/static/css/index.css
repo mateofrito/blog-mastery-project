@@ -32,7 +32,7 @@ header nav {
     padding: 10px;
 }
 
-}
+
 header nav {
     background-color: transparent;
 }
@@ -70,10 +70,7 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
-footer {
-    background-color: powderblue;
-    flex: 0 0 80px;
-}
+
 body > section {
     flex: 1 1 auto;
     flex-direction: row;
@@ -84,16 +81,30 @@ body > section {
 section > main {
     flex-grow: 1;
     flex-basis: 100%;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
+    justify-content: left;
+    text-align: left;
+   /* padding: 10px;*/
     overflow: auto;
+    
 }
+
+p {
+    text-decoration-line: underline;
+
+}
+.post{
+    align-items: left;
+}
+textarea{
+    width: 500px; 
+    height:500px;
+}
+
 aside {
-    background-color: lightblue;
+    background-color: white;
     height: 100%;
     flex-grow: 0;
-    flex-basis: 50%;
+    flex-basis: 20%;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -101,27 +112,24 @@ aside {
 article {
     border-radius: 5px;
     background-color: #efefef;
-    padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-
-h4{
-    text-align: left;
-}
-
 
 header,
 body > section,
-footer,
-main article {
+footer
+ {
     display: flex;
     justify-content: center;
     font-weight: bold;
 }
 
 
-footer,
-header,
-main article {
+footer, header {
     align-items: center;
+}
+
+footer {
+    background-color: powderblue;
+    flex: 0 0 80px;
 }

@@ -16,9 +16,7 @@
 <body>
 	<header>
 
-		<figure>
-			<img src="images/onetech-logo.png">
-		</figure>
+		<a href="/"><figure><img src="images/onetech-logo.png"></figure></a>
 
 		<nav>
 			<ul>
@@ -32,13 +30,10 @@
 	<section>
 		<main>
 
-
 			<article class="post" th:each="post : ${posts}">
-			<h4 th:text="${post.title}">Blog Post 1</h4>
-			<span th:text="${#strings.abbreviate(post.body, 100)}">Post</span>
-			</article>
-			
-			
+			<h1 th:text="${post.title}">Blog Post 1</h1>
+			<p th:text="${#strings.abbreviate(post.body, 300)}">Post</p>
+			</article>			
 
 		</main>
 
@@ -46,6 +41,7 @@
 			Popular Post This Week 
 			(Add Banner, Tag List, etc..)
 		</aside>
+
 	</section>
 	
 	<footer>
