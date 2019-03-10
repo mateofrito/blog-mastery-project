@@ -30,12 +30,12 @@
 
 	<section>
 		<h1>Add Post</h1>
-		<form action="post/add" method="POST" class="post-entery">
+		<form action="/add" method="POST" class="post-entery">
 			<h4> Select Author </h4>
 			<div class="drop-down" th:object="${author}">
 				<select class="form-control" id="dropOperator" name="author">
 					<option value="0"> Select Author </option>
-					<option th:each="category : ${authors}"
+					<option th:each="author : ${authors}"
 					th:value="${author.author}"
 					th:text="${author.author}"> other option</option>
 				</select>	
@@ -46,7 +46,7 @@
 			<div class="drop-down" th:object="${author}">
 				<select class="form-control" id="dropOperator" name="genre">
 					<option value="0"> Select Genre </option>
-					<option th:each="category : ${genres}"
+					<option th:each="genre : ${genres}"
 					th:value="${genre.genre}"
 					th:text="${genre.genre}"> other option</option>
 				</select>	
@@ -56,19 +56,19 @@
 			
 			<h4>Title</h4>
 
-			<input type="text" placeholder="Put Title Here" type="textbox" name="title" id="title" style="width: 500px;" maxlength="100" autofocus required></input>
+			<input type="text" placeholder="Put Title Here" name="title" id="title" style="width: 500px;" maxlength="100" autofocus required></input>
 			<h4>Post</h4>
 			<textarea class="postbox" name="body" placeholder="please write your blog post here" maxlength ="5000" style=" width: 500px; height:500px;" required></textarea>
 
 			<input type="submit" name="submit" value="submit" style="width:200px;" required/>
 
 			<h4> select Tag </h4>
-			<div class="drop-down" th:object="${tag}">
+			<div class="drop-down" th:object="${blogtag}">
 				<select class="form-control" id="dropOperator" name="tag">
 					<option value="0"> Select Tag </option>
-					<option th:each="category : ${tags}"
-					th:value="${tag.tag}"
-					th:text="${tag.tag}"> other option</option>
+					<option th:each="blogtag : ${tags}"
+					th:value="${blogtag.tagName}"
+					th:text="${blogtag.tagName}"> other option</option>
 				</select>	
 				
 			</div>

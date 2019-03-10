@@ -1,5 +1,6 @@
 package com.blogmastery.demo.models;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ public class Genre {
 	private Long id;
 	private String genre;
 	@OneToMany(mappedBy="genre")
-	private Collection<Post> post;
+	private Collection<Post> post = new ArrayList<Post>();
 	
 	
 	
@@ -23,6 +24,11 @@ public class Genre {
 	
 	public Genre(String genre) {
 		this.genre = genre;
+	}
+	
+	public Genre(String genre, Collection<Post> post) {
+		this.genre = genre;
+		this.post = post;
 	}
 	
 	public Long getId() {
@@ -37,10 +43,14 @@ public class Genre {
 		return post;
 	}
 
-	
+	@Override
 	public String toString() {
 		return this.getGenre() + " " + this.getPost();
 	}
+
+	
+	
+	
 	
 	
 	

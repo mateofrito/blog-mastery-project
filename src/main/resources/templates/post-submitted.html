@@ -29,14 +29,14 @@
 	</header>
 
 	<section>
-		
+		<main>
 		<h1>Post Submitted</h1>
 		<p th:text="${post.title}"></p>
 		<p th:text="${post.body}"></p>
-		<p th:text="${post.author.author}"></p>
-		<p th:text="${post.genre.genre}"></p>
-		<p th:text="${post.blogtag.tag}"></p>
-		
+		<p th:text="${post.author}"></p>
+		<p th:text="${post.genre}"></p>
+		<p th:text="${post.tag}"></p>
+		</main>
 	</section>
 
 

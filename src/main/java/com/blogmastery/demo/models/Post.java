@@ -25,17 +25,17 @@ public class Post {
 	@ManyToOne
 	private Genre genre;
 	@ManyToMany
-	private Collection<BlogTag> blogTags;
+	private Collection<BlogTag> tag;
 	
 	public Post() {}
 
-	public Post(String title, String body, Author author, Genre genre, BlogTag ...blogTags) {
+	public Post(String title, String body, Author author, Genre genre, BlogTag ...tag) {
 		this.title = title;
 		this.body = body;
 		this.author = Arrays.asList(author);
 		this.date = LocalDateTime.now();
 		this.genre = genre;
-		this.blogTags = Arrays.asList(blogTags);
+		this.tag = Arrays.asList(tag);
 	}
 	
 
@@ -55,8 +55,8 @@ public class Post {
 		return genre;
 	}
 
-	public Collection<BlogTag> getTags() {
-		return blogTags;
+	public Collection<BlogTag> getTag() {
+		return tag;
 	}
 
 	public Long getId() {
@@ -68,5 +68,21 @@ public class Post {
 		
 		return title;
 	}
+//	@Override
+//	public String toString() {
+//		return "Title: " + this.getTitle() +  "; Author: " + this.getAuthor() + "; Genre: " + this.getGenre().getGenre() + "; Body:" + this.getBody() + "; Tags: "+ this.getTag();
+//  }
 
+	
+	
+//	public void addTagToTags(BlogTag tag) {
+//		tag.add(tag);
+//	}
+//	
+//	public void addAuthorToAuthors(Author author) {
+//		author.add(author);
+//	}
+//
+	
+	
 }

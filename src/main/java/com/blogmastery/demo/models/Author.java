@@ -15,7 +15,7 @@ public class Author {
 	@GeneratedValue
 	private Long id;
 	private String author;
-	@ManyToMany
+	@ManyToMany(mappedBy="author")
 	private Collection<Post> post;
 	
 	public Author() {}
@@ -36,6 +36,15 @@ public class Author {
 
 	public Collection<Post> getPost() {
 		return post;
+	}
+	
+	public void addPosttoAuthor(Post newPost) {
+		post.add(newPost);
+	}
+
+	@Override
+	public String toString() {
+		return this.getAuthor() + " " + this.getPost();
 	}
 
 	
