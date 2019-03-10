@@ -15,9 +15,7 @@
 <body>
 	<header>
 
-		<figure>
-			<img src="images/onetech-logo.png">
-		</figure>
+		<a href="/"><figure><img src="images/onetech-logo.png"></figure></a>
 
 		<nav>
 			<ul>
@@ -30,12 +28,14 @@
 
 	<section>
 		<main>
-		<h1>Post Submitted</h1>
-		<p th:text="${post.title}"></p>
-		<p th:text="${post.body}"></p>
-		<p th:text="${post.author}"></p>
-		<p th:text="${post.genre}"></p>
-		<p th:text="${post.tag}"></p>
+			<article class="submitted-post">
+				<h1>Post Submitted</h1>
+				<p th:text="${post.title}"></p>
+				<p th:text="${post.body}"></p>
+				<p th:text="${post.author.author}"></p>
+				<p th:text="${post.genre.genre}"></p>
+				<p th:text="${post.blogtag.tag}"></p>
+			</article>
 		</main>
 	</section>
 
