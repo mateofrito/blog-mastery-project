@@ -63,6 +63,30 @@ public class PostController {
 		
 		return "post-submitted";
 	}
+	
+	@GetMapping("/post/{id}")
+	public String getSinglePost(@PathVariable Long id, Model model) {
+		Post postId = postRepo.findById(id).get();
+		model.addAttribute("post", postId);
 		
+		return "single-post";
+	
+	
+	}
+	
+	@GetMapping("/allpost")
+	public String getHomePage(Model model) {
 		
-}
+		model.addAttribute("posts", postRepo.findAll());
+		
+		return "allpost";
+		
+	}
+	
+	
+	
+	
+	
+}	
+		
+
