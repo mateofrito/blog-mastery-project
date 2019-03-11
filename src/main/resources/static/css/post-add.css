@@ -1,0 +1,27 @@
+h1{
+	font-size: 30px;
+}
+body{
+	background-color: #efefef;
+	text-align: center;
+}
+
+form{
+	display: inline-block;
+}
+
+section > main{
+	display: inline-block;
+	text-align: center;
+}
+
+input >.title-box{
+	width: 200px;
+
+}
+
+textarea > .text-area{
+	width: 400px; 
+	height:200px;
+}
+
