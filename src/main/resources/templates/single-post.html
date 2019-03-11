@@ -20,29 +20,26 @@
 
 		<nav>
 			<ul>
-				<li><a href="/home" >Home</a></li>
+				<li><a href="/" >Home</a></li>
 				<li><a href="/add" >Blog</a></li>
 				<li><a href="/addtag" >Tag</a></li>
 				<li><a href="/addauthor" >Authors</a></li>
 				<li><a href="/addgenre" >Genres</a></li>
-				<li><a href="/allpost" >Posts</a></li>
+				<li><a href="/allpost" >All Posts</a></li>
 			</ul>
 		</nav>
 	</header>
 	
 	<section>
 		<main>
-
-
-			<article class="post" th:each="post : ${posts}">
-			<h1 th:text="${post.title}">Blog Post 1</h1>
-			<p th:text="${#strings.abbreviate(post.body, 300)}">Post</p>
-			</article>			
-
-
+			<article class="post">
+				<h4 th:text="${post.title}">Blog Post 1</h4>
+				<p th:text="${post.body}">Blog Content</p>
+			</article>
 		</main>
 		
 
+		
 	</section>
 	
 	<footer>
