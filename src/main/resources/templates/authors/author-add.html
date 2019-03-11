@@ -1,0 +1,57 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Authors</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon(1)_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon(1)_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon(1)_io/favicon-16x16.png">
+	<link rel="manifest" href="/favicon/favicon(1)_io/site.webmanifest">
+	<meta name="description" content="The Best Blog on Earth!">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="css/index.css">  
+</head>
+
+<body>
+	<header>
+
+		<a href="/"><figure><img src="images/onetech-logo.png"></figure></a>
+
+		<nav>
+			<ul>
+				<li><a href="/" >Home</a></li>
+				<li><a href="/add" >Blog</a></li>
+				<li><a href="/addtag" >Tag</a></li>
+				<li><a href="/addauthor" >Authors</a></li>
+				<li><a href="/addgenre" >Genres</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		
+		<main>
+			<article class="authors" th:each="author : ${authors}">
+				<h4 th:text="${author.author}">Authors</h4>
+			</article>
+
+			<form action="/newauthor" method="POST" class="author-entery">
+				<h4>New Author</h4>
+				<input type="text" placeholder="write author name here" name="author" id="author" style="width: 200px;" maxlength="100" autofocus required/>
+
+				<input type="submit" name="submit" style="width:75px; height: 45px; display:block; text-align: center; margin: 0 auto;" />
+			</form>
+
+			
+		</main>
+
+	</section>
+
+
+
+	<footer>
+		<small>&copy; Top|Blog 2019</small>
+	</footer>
+
+</body>
+</html>
