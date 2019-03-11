@@ -1,7 +1,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Authors</title>
+	<title>Top|Blog</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon(1)_io/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon(1)_io/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon(1)_io/favicon-16x16.png">
@@ -20,38 +20,35 @@
 
 		<nav>
 			<ul>
-				<li><a href="/" >Home</a></li>
+				<li><a href="/home" >Home</a></li>
 				<li><a href="/add" >Blog</a></li>
 				<li><a href="/addtag" >Tag</a></li>
 				<li><a href="/addauthor" >Authors</a></li>
 				<li><a href="/addgenre" >Genres</a></li>
+				<li><a href="/allpost" >Posts</a></li>
 			</ul>
 		</nav>
 	</header>
+	
 	<section>
-		
 		<main>
-			<article class="genres" th:each="genre : ${genres}">
-				<a th:text="${genre.genre}" th:href="@{|genre/${genre.genre}|}">Genres</a>
-			</article>
 
-			<form action="/newgenre" method="POST" class="genre-entery">
-				<h4>New Genre</h4>
-				<input type="text" placeholder="write genre kind here" name="genre" id="genre" style="width: 200px;" maxlength="100" autofocus required/>
 
-				<input type="submit" name="submit" style="width:75px; height: 45px; display:block; text-align: center; margin: 0 auto;" />
-			</form>
+			<article class="genre" th:each="post : ${genre.post}">
+			<h1 th:text="${post.title}">Blog Post 1</h1>
+			<p th:text="${#strings.abbreviate(post.body, 300)}">Post</p><a th:text=" '  read more.' " th:href="@{|/post/${post.id}|}"></a>
+			</article>			
 
-			
+
 		</main>
+		
 
 	</section>
-
-
-
+	
 	<footer>
 		<small>&copy; Top|Blog 2019</small>
 	</footer>
+	
 
 </body>
 </html>

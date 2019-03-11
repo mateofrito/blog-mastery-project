@@ -15,4 +15,6 @@ public interface GenreRepository extends CrudRepository<Genre, Long> {
 
 	Optional<Post> findById(Post postId);
 
+	
+
 }

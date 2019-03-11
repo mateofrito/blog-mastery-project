@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.blogmastery.demo.models.Genre;
@@ -39,5 +40,11 @@ public class GenreController {
 		return "redirect:/addgenre";	
 		}
 	
+	@GetMapping("/genre/{genre}")
+	public String getGenre(@PathVariable String genre, Model model) {
+		
+		model.addAttribute("genre", genreRepo.findGenreByGenre(genre));
+		return "/genres/genre";
+	}
 		
 }
