@@ -37,7 +37,7 @@ public class HomeController {
 	@GetMapping("/home")
 	public String getNewHomePage(Model model) {
 		
-		model.addAttribute("posts", postRepo.findAll());
+		
 		
 		return "home";
 		

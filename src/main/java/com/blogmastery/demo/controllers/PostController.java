@@ -65,10 +65,7 @@ public class PostController {
 	}
 	
 
-	@GetMapping("/home")
-	public String newHomePage() {
-		return "home";
-	}
+	
 
 	@GetMapping("/post/{id}")
 	public String getSinglePost(@PathVariable Long id, Model model) {
