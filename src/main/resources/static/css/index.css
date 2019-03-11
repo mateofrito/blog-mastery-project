@@ -97,6 +97,7 @@ p {
 .post{
     align-items: left;
 }
+
 /*textarea{
     width: 500px; 
     height:500px;
@@ -111,9 +112,10 @@ aside {
     justify-content: center;
     align-items: center;
     display: flex;
-}*/
+}
+
 article {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #efefef;
     margin-bottom: 15px;
 }
